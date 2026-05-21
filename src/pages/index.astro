@@ -1,0 +1,45 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+---
+
+<MainLayout title="Chiramel & Co | Advocates & Solicitors">
+  <!-- Hero -->
+  <section class="min-h-[90vh] flex items-center bg-gradient-to-br from-zinc-950 to-zinc-900 text-white relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6 py-24 relative z-10">
+      <div class="max-w-3xl">
+        <p class="text-amber-500 font-medium tracking-widest">ESTABLISHED PRACTICE • SUPREME COURT OF INDIA</p>
+        <h1 class="text-7xl md:text-8xl font-serif font-semibold leading-none mt-6">
+          Justice.<br>Excellence.<br>Integrity.
+        </h1>
+        <p class="mt-8 text-xl text-zinc-300 max-w-lg">
+          Chiramel & Co is a full-service law firm with deep expertise across litigation, arbitration, and advisory matters before the Supreme Court, High Courts and Tribunals.
+        </p>
+        <div class="mt-12 flex gap-4">
+          <a href="/contact" class="bg-amber-600 hover:bg-amber-700 px-8 py-4 rounded-2xl font-medium text-lg transition">Get In Touch</a>
+          <a href="/practice-areas" class="border border-white/50 hover:bg-white/10 px-8 py-4 rounded-2xl font-medium text-lg transition">Our Practice Areas</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Practice Areas Teaser -->
+  <section class="py-24 bg-white dark:bg-zinc-950">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-5xl font-serif text-center mb-16">Practice Areas</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="p-8 border border-zinc-200 dark:border-zinc-800 rounded-3xl hover:border-amber-600 transition group">
+          <h3 class="font-semibold text-2xl mb-3">Constitutional Law</h3>
+          <p class="text-zinc-600 dark:text-zinc-400">Landmark cases before the Supreme Court of India</p>
+        </div>
+        <div class="p-8 border border-zinc-200 dark:border-zinc-800 rounded-3xl hover:border-amber-600 transition group">
+          <h3 class="font-semibold text-2xl mb-3">Corporate & Commercial</h3>
+          <p class="text-zinc-600 dark:text-zinc-400">Mergers, disputes, regulatory matters</p>
+        </div>
+        <div class="p-8 border border-zinc-200 dark:border-zinc-800 rounded-3xl hover:border-amber-600 transition group">
+          <h3 class="font-semibold text-2xl mb-3">Arbitration & ADR</h3>
+          <p class="text-zinc-600 dark:text-zinc-400">Domestic and International arbitration</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</MainLayout>
