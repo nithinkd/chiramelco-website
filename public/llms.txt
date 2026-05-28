@@ -1,0 +1,33 @@
+# Chiramel & Co
+
+> Chiramel & Co is a law firm based in New Delhi, India. This file provides links to the public information and published legal commentary available on the firm's website.
+
+## Firm Information
+
+- [Home](https://chiramelco.com/): Official website homepage.
+- [About Us](https://chiramelco.com/about/): Background and overview of the firm.
+- [Our Team](https://chiramelco.com/team/): Advocate profiles and associate office presence.
+- [Practice Areas](https://chiramelco.com/practice-areas/): Areas of legal practice.
+- [Contact Us](https://chiramelco.com/contact/): Public contact information.
+
+## Intellectual Property Practice
+
+- [Intellectual Property Practice](https://chiramelco.com/intellectual-property/): Intellectual property, media, entertainment, technology and commercial services.
+- [Trademarks](https://chiramelco.com/trademarks/)
+- [Copyright](https://chiramelco.com/copyright/)
+- [Media & Entertainment](https://chiramelco.com/media-entertainment/)
+- [Commercial Transactions](https://chiramelco.com/commercial-transactions/)
+- [Technology](https://chiramelco.com/technology/)
+- [Patents & Designs](https://chiramelco.com/patents-designs/)
+
+## News and Articles
+
+- [News & Articles](https://chiramelco.com/news-articles/): Index of published legal commentary.
+- [Territorial Jurisdiction of Consumer Commissions Under the Consumer Protection Act, 2019](https://chiramelco.com/news-articles/territorial-jurisdiction-consumer-commissions/) by Jos Chiramel.
+- [Change in Law - Effect on Workers' Cess Implemented by States Later On](https://chiramelco.com/news-articles/change-in-law-workers-cess/) by Jos Chiramel.
+- [Legality of Restriction on Period of Limitation](https://chiramelco.com/news-articles/restriction-on-period-of-limitation/) by Jos Chiramel.
+- [Who Can Be an Arbitrator in a CPWD Dispute](https://chiramelco.com/news-articles/cpwd-arbitrator-eligibility/) by Jos Chiramel.
+
+## Notice
+
+The website materials are for general information only and do not constitute legal advice.

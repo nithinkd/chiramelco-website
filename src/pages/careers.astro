@@ -1,0 +1,116 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import { sitePath } from '../utils/sitePath';
+
+const openings = [
+  'Junior Advocates / Associates',
+  'Paralegals & Legal Researchers',
+  'Law Students (Internships)',
+  'Administrative & Support Staff',
+];
+---
+
+<MainLayout title="Careers - Chiramel & Co">
+
+  <!-- Thin Hero Header -->
+  <section class="relative h-[35vh] md:h-[32vh] flex items-center overflow-hidden bg-black">
+    <img 
+      src={sitePath('/images/careerheader.png')}
+      alt="Careers at Chiramel & Co" 
+      class="absolute inset-0 w-full h-full object-cover"
+    >
+    <div class="absolute inset-0 bg-black/65"></div>
+    
+    <div class="relative z-10 max-w-7xl mx-auto px-6 text-center">
+      <h1 class="text-5xl md:text-6xl font-serif text-white">Careers</h1>
+    </div>
+  </section>
+
+  <!-- Careers Content -->
+  <div class="max-w-6xl mx-auto px-6 py-20">
+    <div class="max-w-3xl mx-auto text-center mb-16">
+      <p class="text-xl leading-relaxed text-zinc-700 dark:text-zinc-300">
+        We are always on the lookout for proactive, hardworking, and dedicated legal professionals to join our team.
+      </p>
+    </div>
+
+    <div class="grid lg:grid-cols-[1fr_390px] gap-12 items-start">
+      <section>
+        <p class="text-sm font-semibold uppercase tracking-[0.2em] text-amber-600 mb-4">Opportunities</p>
+        <h2 class="text-3xl font-semibold mb-8">Current Openings</h2>
+
+        <div class="border-t border-zinc-200 dark:border-zinc-800">
+          {openings.map((opening) => (
+            <div class="opening-row">
+              <span class="opening-bullet" aria-hidden="true"></span>
+              <p class="text-lg font-medium">{opening}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <aside class="rounded-3xl border border-amber-200 dark:border-amber-900/70 bg-amber-50/70 dark:bg-amber-950/20 p-8 md:p-10">
+        <p class="text-sm font-semibold uppercase tracking-[0.2em] text-amber-600">Apply</p>
+        <h2 class="text-3xl font-semibold mt-4">Join Our Team</h2>
+        <p class="mt-5 leading-relaxed text-zinc-600 dark:text-zinc-400">
+          Interested candidates may send their resume along with a cover letter to the email address below.
+        </p>
+
+        <div class="mt-8 space-y-3">
+          <a class="application-link" href="mailto:mail@chiramelco.com">
+            mail@chiramelco.com
+          </a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</MainLayout>
+
+<style>
+  .opening-row {
+    display: flex;
+    align-items: center;
+    gap: 1.1rem;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid rgb(228 228 231);
+  }
+
+  .opening-bullet {
+    width: 0.45rem;
+    height: 0.45rem;
+    flex-shrink: 0;
+    border-radius: 9999px;
+    background: rgb(217 119 6);
+  }
+
+  .application-link {
+    display: block;
+    padding: 1rem 1.15rem;
+    border: 1px solid rgb(253 230 138);
+    border-radius: 0.9rem;
+    background: rgb(255 255 255 / 65%);
+    font-weight: 500;
+    color: rgb(180 83 9);
+    transition: border-color 180ms ease, background-color 180ms ease;
+  }
+
+  .application-link:hover {
+    border-color: rgb(217 119 6);
+    background: white;
+  }
+
+  :global(.dark) .opening-row {
+    border-color: rgb(39 39 42);
+  }
+
+  :global(.dark) .application-link {
+    border-color: rgb(120 53 15);
+    background: rgb(24 24 27 / 55%);
+    color: rgb(251 191 36);
+  }
+
+  :global(.dark) .application-link:hover {
+    border-color: rgb(217 119 6);
+    background: rgb(24 24 27);
+  }
+</style>

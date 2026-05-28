@@ -1,35 +1,71 @@
+---
+import { sitePath } from '../utils/sitePath';
+---
+
 <footer class="bg-zinc-900 text-zinc-400 py-16">
-  <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-10">
-    <div>
-      <div class="flex items-center gap-3 mb-4">
-        <div class="w-8 h-8 bg-amber-700 rounded-xl flex items-center justify-center text-white font-bold">C</div>
-        <span class="font-serif text-2xl text-white">Chiramel & Co</span>
-      </div>
-      <p class="text-sm">Advocates & Solicitors<br>Supreme Court of India</p>
-    </div>
-    
-    <div>
-      <h4 class="text-white font-medium mb-4">Quick Links</h4>
-      <ul class="space-y-2 text-sm">
-        <li><a href="/about" class="hover:text-white">About Us</a></li>
-        <li><a href="/team" class="hover:text-white">Our Team</a></li>
-        <li><a href="/practice-areas" class="hover:text-white">Practice Areas</a></li>
-      </ul>
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="flex justify-center">
+      <img 
+        src={sitePath('/images/logo-long-dark.png')}
+        alt="Chiramel & Co" 
+        class="h-20 w-auto"
+      >
     </div>
 
-    <div>
-      <h4 class="text-white font-medium mb-4">Contact</h4>
-      <p class="text-sm">Chamber No. 234, Delhi High Court<br>New Delhi - 110003</p>
+    <div class="mt-8 flex justify-center gap-4">
+      <a
+        href="https://www.linkedin.com/company/chiramelandco"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="social-link"
+        aria-label="Chiramel & Co on LinkedIn"
+      >
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M6.94 8.5A1.56 1.56 0 1 0 6.94 5.38a1.56 1.56 0 0 0 0 3.12ZM5.62 19h2.65V10H5.62v9Zm4.28 0h2.65v-5.01c0-1.32.25-2.6 1.89-2.6 1.62 0 1.64 1.51 1.64 2.68V19h2.65v-5.56c0-2.73-.59-4.83-3.78-4.83-1.53 0-2.56.84-2.98 1.64h-.04V10H9.9v9Z"/>
+        </svg>
+      </a>
+      <a
+        href="https://www.instagram.com/chiramelco/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="social-link"
+        aria-label="Chiramel & Co on Instagram"
+      >
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 7.02A4.98 4.98 0 1 0 12 17a4.98 4.98 0 0 0 0-9.98Zm0 8.23A3.25 3.25 0 1 1 12 8.75a3.25 3.25 0 0 1 0 6.5Z"/>
+          <path d="M17.2 7.98a1.16 1.16 0 1 0 0-2.32 1.16 1.16 0 0 0 0 2.32Z"/>
+          <path d="M16.66 2.5H7.34A4.84 4.84 0 0 0 2.5 7.34v9.32a4.84 4.84 0 0 0 4.84 4.84h9.32a4.84 4.84 0 0 0 4.84-4.84V7.34a4.84 4.84 0 0 0-4.84-4.84Zm3.1 14.16a3.1 3.1 0 0 1-3.1 3.1H7.34a3.1 3.1 0 0 1-3.1-3.1V7.34a3.1 3.1 0 0 1 3.1-3.1h9.32a3.1 3.1 0 0 1 3.1 3.1v9.32Z"/>
+        </svg>
+      </a>
     </div>
 
-    <div>
-      <p class="text-xs leading-relaxed">
-        This website is for informational purposes only and does not constitute legal advice.
-      </p>
+    <div class="mt-8 pt-8 border-t border-zinc-800 text-center text-xs text-zinc-500">
+      © 2026 Chiramel & Co. All Rights Reserved. | This website is for informational purposes only.
     </div>
-  </div>
-  
-  <div class="text-center text-xs mt-16 border-t border-zinc-800 pt-8">
-    © 2026 Chiramel & Co. All Rights Reserved.
   </div>
 </footer>
+
+<style>
+  .social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    border: 1px solid rgb(63 63 70);
+    border-radius: 9999px;
+    color: rgb(161 161 170);
+    transition: color 180ms ease, border-color 180ms ease;
+  }
+
+  .social-link:hover {
+    color: rgb(251 191 36);
+    border-color: rgb(217 119 6);
+  }
+
+  .social-link svg {
+    width: 1.25rem;
+    height: 1.25rem;
+    fill: currentColor;
+  }
+</style>

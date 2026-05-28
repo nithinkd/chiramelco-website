@@ -1,0 +1,21 @@
+.DS_Store
+.astro/
+dist/
+node_modules/
+
+# Upload packages and generated deployment bundles
+*.zip
+*-update/
+/chiramelco-profile-ip-upload/
+/profile-ip-upload/
+/profile-pdf-email-update/
+/robots-openai-update/
+/seo-root-update/
+/deliverables/
+/work/
+
+# Local duplicates / design previews not intended for production routing
+/Chiramel-Co-IP-Profile.pdf
+/robots.txt
+/src/pages/visiting-card-preview.astro
+/public/images/visiting-card-leather-preview.jpg

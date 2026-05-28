@@ -3,5 +3,7 @@ import tailwind from '@astrojs/tailwind';
 
 export default defineConfig({
   integrations: [tailwind()],
-  site: 'https://chiramelco.org',
+  site: 'https://chiramelco.com',
+  base: process.env.PREVIEW_BASE || '/',
+  trailingSlash: 'never',
 });

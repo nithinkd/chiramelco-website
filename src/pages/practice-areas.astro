@@ -1,0 +1,100 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import { sitePath } from '../utils/sitePath';
+
+const practiceAreas = [
+  'Arbitration & Alternate Disputes Resolution',
+  'Administrative & Service Law',
+  'Aviation Law',
+  'Banking & Insurance Law',
+  'Competition & Anti Trust Law',
+  'Constitutional Law',
+  'Consumer Law',
+  'Corporate & Commercial Law',
+  'Environmental Law',
+  'Family Law',
+  'Human Rights Law',
+  'Infrastructure & Power',
+  'Intellectual Property, Media & Entertainment Laws',
+  'Maritime Law',
+  'Medical Negligence',
+  'Real Estate & Property',
+  'Taxation Law',
+];
+---
+
+<MainLayout title="Practice Areas - Chiramel & Co">
+
+  <!-- Thin Hero Header -->
+  <section class="relative h-[35vh] md:h-[32vh] flex items-center overflow-hidden bg-black">
+    <img 
+      src={sitePath('/images/practiceheader.png')}
+      alt="Practice Areas" 
+      class="absolute inset-0 w-full h-full object-cover"
+    >
+    <div class="absolute inset-0 bg-black/65"></div>
+    
+    <div class="relative z-10 max-w-7xl mx-auto px-6 text-center">
+      <h1 class="text-5xl md:text-6xl font-serif text-white">Practice Areas</h1>
+    </div>
+  </section>
+
+  <!-- Practice Areas Content -->
+  <div class="max-w-7xl mx-auto px-6 py-20">
+    <div class="text-center mb-16">
+      <p class="text-xl text-zinc-600 dark:text-zinc-400">
+        Comprehensive legal expertise serving clients across India
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-x-12">
+      {practiceAreas.map((area) => {
+        const isIntellectualProperty = area === 'Intellectual Property, Media & Entertainment Laws';
+        const content = (
+          <>
+            <span class="practice-bullet" aria-hidden="true"></span>
+            <h3 class="font-medium text-lg leading-snug flex-1">{area}</h3>
+            {isIntellectualProperty && (
+              <span class="text-amber-600 text-xl" aria-hidden="true">→</span>
+            )}
+          </>
+        );
+
+        return isIntellectualProperty ? (
+          <a href={sitePath('/intellectual-property')} class="practice-row group hover:text-amber-600">
+            {content}
+          </a>
+        ) : (
+          <div class="practice-row">
+            {content}
+          </div>
+        );
+      })}
+    </div>
+  </div>
+</MainLayout>
+
+<style>
+  .practice-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    min-height: 5.5rem;
+    padding: 1.5rem 0;
+    border-top: 1px solid rgb(228 228 231);
+    transition: color 180ms ease;
+  }
+
+  .practice-bullet {
+    flex-shrink: 0;
+    width: 0.45rem;
+    height: 0.45rem;
+    margin-top: 0.55rem;
+    background: rgb(217 119 6);
+    border-radius: 9999px;
+  }
+
+  :global(.dark) .practice-row {
+    border-color: rgb(39 39 42);
+  }
+</style>

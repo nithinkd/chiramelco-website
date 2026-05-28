@@ -1,0 +1,34 @@
+---
+import IPDetailPage from '../components/IPDetailPage.astro';
+
+const details = [
+  {
+    title: 'IP Due Diligence',
+    subtitle: 'Transactions and Investment',
+    description: 'Intellectual property ownership, use and risk should be assessed in corporate and commercial transactions. Due diligence identifies rights gaps, restrictions and issues affecting value.',
+  },
+  {
+    title: 'IP and IT Audits',
+    subtitle: 'Asset and Compliance Review',
+    description: 'Audits of IP and technology arrangements clarify asset portfolios, licences and compliance exposure. Findings support stronger governance and contractual protection.',
+  },
+  {
+    title: 'Licensing & Franchising',
+    subtitle: 'Growth and Commercialisation',
+    description: 'Licensing and franchising arrangements support commercialisation and business expansion. Agreements define rights, standards, fees and enforcement mechanisms.',
+  },
+  {
+    title: 'Commercial Agreements',
+    subtitle: 'Publishing, Supply, Distribution and Licensing',
+    description: 'Commercial agreements can embed intellectual property protections within everyday business activity. Drafting addresses ownership, usage permissions, confidentiality and contractual risk.',
+  },
+];
+---
+
+<IPDetailPage
+  title="Commercial Transactions"
+  tagline="Assets • Agreements • Growth"
+  intro="Our transactional practice helps clients commercialise intellectual property while managing contractual and technology-related risk."
+  contactIntro="Connect with our dedicated team for IP due diligence, licensing and commercial agreement matters."
+  details={details}
+/>

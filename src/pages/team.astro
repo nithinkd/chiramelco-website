@@ -1,0 +1,287 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import { sitePath } from '../utils/sitePath';
+
+const associateOffices = [
+  { city: 'Aligarh', state: 'Uttar Pradesh', left: '37.5%', top: '34.3%' },
+  { city: 'Bhopal', state: 'Madhya Pradesh', left: '35.8%', top: '45.0%' },
+  { city: 'Chandigarh', state: 'Punjab, Haryana & UT', left: '34.1%', top: '28.4%' },
+  { city: 'Chennai', state: 'Tamil Nadu', left: '43.2%', top: '68.6%' },
+  { city: 'Faridabad', state: 'Haryana', left: '35.5%', top: '33.1%' },
+  { city: 'Ferozabad', state: 'Uttar Pradesh', left: '38.3%', top: '36.0%' },
+  { city: 'Itanagar', state: 'Arunachal Pradesh', left: '77.3%', top: '36.0%' },
+  { city: 'Karnal', state: 'Haryana', left: '34.8%', top: '30.1%' },
+  { city: 'Kochi', state: 'Kerala', left: '32.9%', top: '75.9%' },
+  { city: 'Kolkata', state: 'West Bengal', left: '63.9%', top: '46.6%' },
+  { city: 'Kollam', state: 'Kerala', left: '33.8%', top: '78.4%' },
+  { city: 'Kurukshetra', state: 'Haryana', left: '34.5%', top: '29.5%' },
+  { city: 'Lucknow', state: 'Uttar Pradesh', left: '45.0%', top: '36.9%' },
+  { city: 'Mangalore', state: 'Karnataka', left: '29.3%', top: '69.0%' },
+  { city: 'Mathura', state: 'Uttar Pradesh', left: '36.5%', top: '35.3%' },
+  { city: 'Meerut', state: 'Uttar Pradesh', left: '36.6%', top: '31.9%' },
+  { city: 'Mumbai', state: 'Maharashtra', left: '24.2%', top: '55.0%' },
+  { city: 'Palakkad', state: 'Kerala', left: '33.9%', top: '74.0%' },
+  { city: 'Panipat', state: 'Haryana', left: '34.8%', top: '30.8%' },
+  { city: 'Shimla', state: 'Himachal Pradesh', left: '35.1%', top: '27.7%' },
+  { city: 'Sonepat', state: 'Haryana', left: '34.9%', top: '31.9%' },
+  { city: 'Thiruvananthapuram', state: 'Kerala', left: '34.6%', top: '79.0%' },
+  { city: 'Thrissur', state: 'Kerala', left: '32.8%', top: '74.5%' },
+  { city: 'Vadodara', state: 'Gujarat', left: '24.9%', top: '47.2%' },
+];
+---
+
+<MainLayout title="Our Team - Chiramel & Co">
+
+  <!-- Thin Hero Header -->
+  <section class="relative h-[35vh] md:h-[32vh] flex items-center overflow-hidden bg-black">
+    <img src={sitePath('/images/teamheader.png')} alt="Our Team" class="absolute inset-0 w-full h-full object-cover">
+    <div class="absolute inset-0 bg-black/65"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-6 text-center">
+      <h1 class="text-5xl md:text-6xl font-serif text-white">Our Team</h1>
+    </div>
+  </section>
+
+  <!-- Team Content -->
+  <div class="max-w-7xl mx-auto px-6 py-20">
+    <div class="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+      
+      <!-- Jos Chiramel -->
+      <div class="relative border border-amber-200 dark:border-amber-900 bg-white dark:bg-zinc-950 rounded-3xl p-12 pt-20 text-center">
+        <div class="absolute -top-14 left-1/2 -translate-x-1/2 w-32 h-32 rounded-full border-4 border-white dark:border-zinc-950 overflow-hidden shadow-2xl">
+	          <img src={sitePath('/images/Jos%20Chiramel.jpg')} alt="Jos Chiramel" class="w-full h-full object-cover">
+	        </div>
+		        <h2 class="text-4xl font-semibold mt-6">Jos Chiramel</h2>
+		        <div class="prose prose-lg dark:prose-invert mt-10 leading-relaxed">
+		          <p>Mr. Jos Chiramel began his career in 1983 with an LLB degree from Delhi University. His legal practice specializes in banking and insurance laws which later expanded into corporate laws, infrastructure, taxation, medical negligence, consumer law, and real estate.</p>
+		        </div>
+		        <div class="mt-8 flex flex-col items-center gap-4">
+		          <a href="mailto:jos@chiramelco.com" class="profile-link">
+		            jos@chiramelco.com
+		          </a>
+			          <a href={sitePath('/practice-areas')} class="inline-flex items-center gap-2 font-medium text-amber-600 hover:text-amber-700 transition-colors">
+			            Practice Areas <span aria-hidden="true">→</span>
+			          </a>
+			        </div>
+			        <div class="profile-socials">
+			          <a
+			            href="https://www.linkedin.com/in/jos-chiramel-44329716/"
+			            target="_blank"
+			            rel="noopener noreferrer"
+			            class="linkedin-link"
+			            aria-label="Jos Chiramel on LinkedIn"
+			          >
+			            <svg viewBox="0 0 24 24" aria-hidden="true">
+			              <path d="M6.94 8.5A1.56 1.56 0 1 0 6.94 5.38a1.56 1.56 0 0 0 0 3.12ZM5.62 19h2.65V10H5.62v9Zm4.28 0h2.65v-5.01c0-1.32.25-2.6 1.89-2.6 1.62 0 1.64 1.51 1.64 2.68V19h2.65v-5.56c0-2.73-.59-4.83-3.78-4.83-1.53 0-2.56.84-2.98 1.64h-.04V10H9.9v9Z"/>
+			            </svg>
+			          </a>
+			          <a href="https://wa.me/919810138185" target="_blank" rel="noopener noreferrer" class="whatsapp-qr">
+			            <img src={sitePath('/images/whatsapp-jos.svg')} alt="WhatsApp QR code for Jos Chiramel">
+			            <span>WhatsApp</span>
+			          </a>
+			        </div>
+	      </div>
+
+      <!-- Christine Chiramel -->
+      <div class="relative border border-amber-200 dark:border-amber-900 bg-white dark:bg-zinc-950 rounded-3xl p-12 pt-20 text-center">
+        <div class="absolute -top-14 left-1/2 -translate-x-1/2 w-32 h-32 rounded-full border-4 border-white dark:border-zinc-950 overflow-hidden shadow-2xl">
+	          <img src={sitePath('/images/Christine%20Chiramel.jpeg')} alt="Christine Chiramel" class="w-full h-full object-cover">
+	        </div>
+		        <h2 class="text-4xl font-semibold mt-6">Christine Chiramel</h2>
+		        <div class="prose prose-lg dark:prose-invert mt-10 leading-relaxed">
+		          <p>Ms. Christine Chiramel completed her LLM in IP from Benjamin N. Cardozo School of Law, Yeshiva University, New York in 2009 after enrolling at the Bar Council of India in 2008. Her practice covers IP, Media & Entertainment, Technology & Corporate Commercial Law.</p>
+		        </div>
+		        <div class="mt-8 flex flex-col items-center gap-4">
+		          <a href="mailto:christine@chiramelco.com" class="profile-link">
+		            christine@chiramelco.com
+		          </a>
+			          <a href={sitePath('/intellectual-property')} class="inline-flex items-center gap-2 font-medium text-amber-600 hover:text-amber-700 transition-colors">
+			            Intellectual Property Practice <span aria-hidden="true">→</span>
+			          </a>
+			        </div>
+			        <div class="profile-socials">
+			          <a
+			            href="https://www.linkedin.com/in/christine-chiramel-151821b/"
+			            target="_blank"
+			            rel="noopener noreferrer"
+			            class="linkedin-link"
+			            aria-label="Christine Chiramel on LinkedIn"
+			          >
+			            <svg viewBox="0 0 24 24" aria-hidden="true">
+			              <path d="M6.94 8.5A1.56 1.56 0 1 0 6.94 5.38a1.56 1.56 0 0 0 0 3.12ZM5.62 19h2.65V10H5.62v9Zm4.28 0h2.65v-5.01c0-1.32.25-2.6 1.89-2.6 1.62 0 1.64 1.51 1.64 2.68V19h2.65v-5.56c0-2.73-.59-4.83-3.78-4.83-1.53 0-2.56.84-2.98 1.64h-.04V10H9.9v9Z"/>
+			            </svg>
+			          </a>
+			          <a href="https://wa.me/919810928556" target="_blank" rel="noopener noreferrer" class="whatsapp-qr">
+			            <img src={sitePath('/images/whatsapp-christine.svg')} alt="WhatsApp QR code for Christine Chiramel">
+			            <span>WhatsApp</span>
+			          </a>
+			        </div>
+	      </div>
+    </div>
+
+    <!-- Associate Advocates -->
+	    <div class="mt-20">
+	      <h2 class="text-3xl font-semibold mb-10 text-center">Associate Advocates - Head Office</h2>
+	      <div class="grid md:grid-cols-2 gap-8">
+        <div class="border border-zinc-200 dark:border-zinc-800 rounded-3xl p-8 text-center">
+          <h3 class="font-semibold text-xl">Anisha Upadhyay</h3>
+          <p class="text-amber-600">Advocate on Record, Supreme Court</p>
+        </div>
+        <div class="border border-zinc-200 dark:border-zinc-800 rounded-3xl p-8 text-center">
+          <h3 class="font-semibold text-xl">Ramesh Kumar, B.Com, LL.B</h3>
+          <p class="text-amber-600">Supreme Court & Delhi High Court</p>
+        </div>
+        <div class="border border-zinc-200 dark:border-zinc-800 rounded-3xl p-8 text-center">
+          <h3 class="font-semibold text-xl">Calvin Chiramel, BA. LL.B (Hons)</h3>
+          <p class="text-amber-600">Civil & Corporate Law</p>
+        </div>
+	        <div class="border border-zinc-200 dark:border-zinc-800 rounded-3xl p-8 text-center">
+	          <h3 class="font-semibold text-xl">Ashutosh Prakash, BBA, LL.B (Hons)</h3>
+	          <p class="text-amber-600">Specialization in Corporate Laws</p>
+		        </div>
+	      </div>
+	    </div>
+
+	    <!-- Associate Offices -->
+	    <section class="mt-24">
+	      <div class="text-center mb-12">
+	        <h2 class="text-3xl font-semibold">Associate Offices</h2>
+	        <p class="mt-4 text-zinc-600 dark:text-zinc-400">Our associate office presence across India</p>
+	      </div>
+
+	      <div class="grid lg:grid-cols-[minmax(340px,520px)_1fr] gap-12 items-start max-w-6xl mx-auto">
+	        <figure class="rounded-3xl border border-zinc-200 dark:border-zinc-800 bg-white p-5 shadow-sm">
+	          <div class="relative mx-auto max-w-[500px]">
+	            <img
+	              src={sitePath('/images/india-associate-offices.svg')}
+	              alt="Map of India based on the Survey of India map, showing associate office locations"
+	              class="w-full h-auto"
+	            >
+	            {associateOffices.map((office, index) => (
+	              <span
+	                class="office-pin"
+	                style={`--left: ${office.left}; --top: ${office.top};`}
+	                title={`${office.city}, ${office.state}`}
+	                aria-label={`${index + 1}. ${office.city}, ${office.state}`}
+	              >
+	                <span>{index + 1}</span>
+	              </span>
+	            ))}
+	          </div>
+	          <figcaption class="pt-4 text-center text-xs text-zinc-500">
+	            Map outline source: Survey of India
+	          </figcaption>
+	        </figure>
+
+	        <div class="grid sm:grid-cols-2 gap-3">
+	          {associateOffices.map((office, index) => (
+	            <div class="flex items-center gap-3 rounded-xl border border-zinc-200 dark:border-zinc-800 px-4 py-3">
+	              <span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-amber-600 text-xs font-semibold text-white">
+	                {index + 1}
+	              </span>
+	              <div>
+	                <p class="font-medium">{office.city}</p>
+	                <p class="text-sm text-zinc-500 dark:text-zinc-400">{office.state}</p>
+	              </div>
+	            </div>
+	          ))}
+	        </div>
+	      </div>
+	    </section>
+	  </div>
+</MainLayout>
+
+<style>
+  .office-pin {
+    position: absolute;
+    left: var(--left);
+    top: var(--top);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.4rem;
+    height: 1.4rem;
+    color: white;
+    background: rgb(217 119 6);
+    border: 2px solid white;
+    border-radius: 9999px 9999px 9999px 0;
+    box-shadow: 0 1px 5px rgb(0 0 0 / 35%);
+    font-size: 0.55rem;
+    font-weight: 700;
+    transform: translate(-50%, -100%) rotate(-45deg);
+  }
+
+  .office-pin span {
+    transform: rotate(45deg);
+  }
+
+  .profile-link {
+    display: inline-block;
+    color: rgb(217 119 6);
+    font-weight: 500;
+    transition: color 180ms ease;
+  }
+
+  .profile-link:hover {
+    color: rgb(180 83 9);
+  }
+
+  .profile-socials {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgb(228 228 231);
+  }
+
+  .linkedin-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    border: 1px solid rgb(217 119 6);
+    border-radius: 9999px;
+    color: rgb(217 119 6);
+    transition: color 180ms ease, background-color 180ms ease;
+  }
+
+  .linkedin-link:hover {
+    color: white;
+    background: rgb(217 119 6);
+  }
+
+  .linkedin-link svg {
+    width: 1.3rem;
+    height: 1.3rem;
+    fill: currentColor;
+  }
+
+  .whatsapp-qr {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    align-items: center;
+    color: rgb(113 113 122);
+    font-size: 0.75rem;
+    transition: color 180ms ease;
+  }
+
+  .whatsapp-qr:hover {
+    color: rgb(217 119 6);
+  }
+
+  .whatsapp-qr img {
+    width: 4.75rem;
+    height: 4.75rem;
+    padding: 0.3rem;
+    border: 1px solid rgb(228 228 231);
+    border-radius: 0.5rem;
+    background: white;
+  }
+
+  :global(.dark) .profile-socials {
+    border-color: rgb(39 39 42);
+  }
+</style>

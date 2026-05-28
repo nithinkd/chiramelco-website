@@ -1,0 +1,70 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import { getCollection, render } from 'astro:content';
+import { sitePath } from '../../utils/sitePath';
+
+export async function getStaticPaths() {
+  const articles = await getCollection('articles');
+
+  return articles.map((article) => ({
+    params: { id: article.id },
+    props: { article },
+  }));
+}
+
+const { article } = Astro.props;
+const { Content } = await render(article);
+---
+
+<MainLayout title={`${article.data.title} - Chiramel & Co`}>
+  <section class="relative h-[28vh] md:h-[30vh] flex items-center overflow-hidden bg-black">
+    <img
+      src={sitePath('/images/practiceheader.png')}
+      alt=""
+      class="absolute inset-0 w-full h-full object-cover"
+    >
+    <div class="absolute inset-0 bg-black/70"></div>
+
+    <div class="relative z-10 max-w-5xl mx-auto px-6 text-center">
+      <p class="text-sm font-semibold uppercase tracking-[0.23em] text-amber-400 mb-5">{article.data.category}</p>
+      <h1 class="text-3xl md:text-5xl font-serif text-white leading-tight">{article.data.title}</h1>
+      <p class="mt-5 text-white/75">By {article.data.author}</p>
+    </div>
+  </section>
+
+  <section class="max-w-4xl mx-auto px-6 py-16 md:py-20">
+    <a href={sitePath('/news-articles')} class="inline-flex items-center gap-2 text-amber-700 dark:text-amber-400 font-medium hover:text-amber-600 transition-colors">
+      <span aria-hidden="true">←</span> Back to News &amp; Articles
+    </a>
+
+    <article class="article-body mt-12">
+      <Content />
+    </article>
+
+    <div class="mt-14 pt-8 border-t border-zinc-200 dark:border-zinc-800">
+      <p class="text-sm text-zinc-500 dark:text-zinc-400">
+        Originally published in the
+        <a href={article.data.sourceUrl} target="_blank" rel="noopener noreferrer" class="text-amber-700 dark:text-amber-400 hover:text-amber-600 transition-colors">
+          Chiramel &amp; Co. Knowledge Bank.
+        </a>
+      </p>
+    </div>
+  </section>
+</MainLayout>
+
+<style>
+  .article-body :global(p) {
+    margin-bottom: 1.45rem;
+    font-size: 1.05rem;
+    line-height: 1.9;
+    color: rgb(63 63 70);
+  }
+
+  .article-body :global(p:last-child) {
+    margin-bottom: 0;
+  }
+
+  :global(.dark) .article-body :global(p) {
+    color: rgb(212 212 216);
+  }
+</style>

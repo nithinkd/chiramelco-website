@@ -1,25 +1,114 @@
-<header class="sticky top-0 z-50 bg-white/95 dark:bg-zinc-900/95 backdrop-blur-md border-b border-zinc-200 dark:border-zinc-800">
-  <nav class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
-    <div class="flex items-center gap-3">
-      <div class="w-10 h-10 bg-amber-700 rounded-xl flex items-center justify-center text-white font-bold text-2xl">C</div>
-      <div>
-        <span class="font-serif text-3xl font-semibold tracking-tight">Chiramel & Co</span>
-      </div>
+---
+import { sitePath } from '../utils/sitePath';
+
+const isHome = Astro.url.pathname === sitePath('/');
+---
+
+<header class="sticky top-0 z-50 bg-white/95 dark:bg-zinc-900/95 backdrop-blur-lg border-b border-zinc-200 dark:border-zinc-800">
+  <nav class="relative max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+    
+    <!-- Logo - Hidden only on Homepage -->
+    <a href={sitePath('/')} class={`flex items-center ${isHome ? 'hidden' : ''}`}>
+	      <img 
+	        src={sitePath('/images/logo.png')}
+	        alt="Chiramel & Co" 
+	        class="h-16 w-auto dark:hidden"
+	      >
+	      <img 
+	        src={sitePath('/images/logo-dark.png')}
+	        alt="Chiramel & Co" 
+	        class="hidden h-16 w-auto dark:block"
+	      >
+    </a>
+
+    <!-- Navigation - Always on the right -->
+    <div class="hidden lg:flex items-center gap-5 text-sm xl:text-base font-medium ml-auto">
+      <a href={sitePath('/')} class="hover:text-amber-600 transition-colors">Home</a>
+      <a href={sitePath('/about')} class="hover:text-amber-600 transition-colors">About Us</a>
+      <a href={sitePath('/team')} class="hover:text-amber-600 transition-colors">Our Team</a>
+      <a href={sitePath('/practice-areas')} class="hover:text-amber-600 transition-colors">Practice Areas</a>
+      <a href={sitePath('/news-articles')} class="hover:text-amber-600 transition-colors">News &amp; Articles</a>
+      <a href={sitePath('/careers')} class="hover:text-amber-600 transition-colors">Careers</a>
+      <a href={sitePath('/contact')} class="hover:text-amber-600 transition-colors">Contact Us</a>
     </div>
 
-    <!-- Desktop Menu -->
-    <div class="hidden md:flex items-center gap-8 text-sm font-medium">
-      <a href="/" class="hover:text-amber-600 transition-colors">Home</a>
-      <a href="/about" class="hover:text-amber-600 transition-colors">About Us</a>
-      <a href="/team" class="hover:text-amber-600 transition-colors">Our Team</a>
-      <a href="/practice-areas" class="hover:text-amber-600 transition-colors">Practice Areas</a>
-      <a href="/knowledge-bank" class="hover:text-amber-600 transition-colors">Knowledge Bank</a>
-      <a href="/careers" class="hover:text-amber-600 transition-colors">Careers</a>
-      <a href="/contact" class="hover:text-amber-600 transition-colors">Contact</a>
-    </div>
+    <button
+      id="navigation-toggle"
+      class="lg:hidden ml-auto px-4 py-3 text-sm font-medium rounded-xl hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors"
+      aria-label="Open navigation"
+      aria-expanded="false"
+      aria-controls="mobile-navigation"
+    >
+      Menu
+    </button>
 
-    <button id="theme-toggle" class="p-3 rounded-2xl hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors">
+    <!-- Dark Mode Toggle -->
+    <button 
+      id="theme-toggle"
+      class="p-3 rounded-2xl hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors text-xl ml-4 xl:ml-8"
+    >
       🌙
     </button>
+
+    <div id="mobile-navigation" class="hidden lg:hidden absolute left-6 right-6 top-full mt-2 rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-3 shadow-xl">
+      <a href={sitePath('/')} class="mobile-link">Home</a>
+      <a href={sitePath('/about')} class="mobile-link">About Us</a>
+      <a href={sitePath('/team')} class="mobile-link">Our Team</a>
+      <a href={sitePath('/practice-areas')} class="mobile-link">Practice Areas</a>
+      <a href={sitePath('/news-articles')} class="mobile-link">News &amp; Articles</a>
+      <a href={sitePath('/careers')} class="mobile-link">Careers</a>
+      <a href={sitePath('/contact')} class="mobile-link">Contact Us</a>
+    </div>
   </nav>
 </header>
+
+<script>
+  const toggle = document.getElementById('theme-toggle');
+  const navigationToggle = document.getElementById('navigation-toggle');
+  const mobileNavigation = document.getElementById('mobile-navigation');
+  const html = document.documentElement;
+
+  function updateToggleIcon() {
+    toggle.textContent = html.classList.contains('dark') ? '☀️' : '🌙';
+  }
+
+  if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    html.classList.add('dark');
+  }
+  updateToggleIcon();
+
+  toggle.addEventListener('click', () => {
+    if (html.classList.contains('dark')) {
+      html.classList.remove('dark');
+      localStorage.theme = 'light';
+    } else {
+      html.classList.add('dark');
+      localStorage.theme = 'dark';
+    }
+    updateToggleIcon();
+  });
+
+  navigationToggle?.addEventListener('click', () => {
+    const isOpen = mobileNavigation?.classList.toggle('hidden') === false;
+    navigationToggle.setAttribute('aria-expanded', String(isOpen));
+    navigationToggle.setAttribute('aria-label', isOpen ? 'Close navigation' : 'Open navigation');
+  });
+</script>
+
+<style>
+  .mobile-link {
+    display: block;
+    padding: 0.8rem 1rem;
+    border-radius: 0.7rem;
+    transition: color 180ms ease, background-color 180ms ease;
+  }
+
+  .mobile-link:hover {
+    color: rgb(217 119 6);
+    background: rgb(244 244 245);
+  }
+
+  :global(.dark) .mobile-link:hover {
+    background: rgb(39 39 42);
+  }
+</style>

@@ -1,0 +1,278 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import { sitePath } from '../utils/sitePath';
+
+const services = [
+  {
+    title: 'Trademarks',
+    href: sitePath('/trademarks'),
+    items: [
+      'Trademark registration (domestic and international)',
+      'Opposition and rectification actions at IPO and High Court',
+      'Brand protection strategy and global trademark portfolio management',
+      'Anti-counterfeiting and customs recordals',
+      'Investigations & Enforcement',
+    ],
+  },
+  {
+    title: 'Copyright',
+    href: sitePath('/copyright'),
+    items: [
+      'Copyright prosecution',
+      'Copyright registration',
+      'Licensing and assignment',
+      'Infringement suits',
+    ],
+  },
+  {
+    title: 'Media & Entertainment',
+    href: sitePath('/media-entertainment'),
+    items: [
+      'Music clearance',
+      'Talent and production deals',
+      'Advertising, broadcasting and distribution',
+      'Content acquisition and dispute resolution',
+    ],
+  },
+  {
+    title: 'Commercial Transactions',
+    href: sitePath('/commercial-transactions'),
+    items: [
+      'IP due diligence',
+      'IP and IT audits',
+      'Licensing and franchising',
+      'Commercial agreements (publishing, supply, distribution and licensing)',
+    ],
+  },
+  {
+    title: 'Technology',
+    href: sitePath('/technology'),
+    items: [
+      'Data protection',
+      'Privacy',
+      'AI governance',
+      'Platform compliance',
+    ],
+  },
+  {
+    title: 'Patents & Designs',
+    href: sitePath('/patents-designs'),
+    items: [
+      'Patent filing and prosecution',
+      'Patent searches and opinions',
+      'Infringement litigation',
+      'PCT international applications',
+      'Industrial design registration',
+    ],
+  },
+];
+---
+
+<MainLayout title="Intellectual Property Practice - Chiramel & Co">
+
+  <!-- Thin Hero Header -->
+  <section class="relative h-[42vh] md:h-[38vh] flex items-center overflow-hidden bg-black">
+    <img 
+      src={sitePath('/images/ipheader.png')}
+      alt="Intellectual Property Practice" 
+      class="absolute inset-0 w-full h-full object-cover"
+    >
+    <div class="absolute inset-0 bg-black/60"></div>
+    
+    <div class="relative z-10 max-w-7xl mx-auto px-6 text-center">
+      <h1 class="text-5xl md:text-6xl font-serif text-white">Intellectual Property Practice</h1>
+      <p class="mt-4 text-xl md:text-2xl text-amber-300 font-light">
+        Protecting Innovation • Securing Rights • Enforcing Interests
+      </p>
+    </div>
+  </section>
+
+  <!-- Content -->
+  <div class="max-w-7xl mx-auto px-6 py-20">
+    <div class="max-w-3xl mx-auto text-center mb-20">
+      <p class="text-xl leading-relaxed">
+        Chiramel & Co offers comprehensive legal services in all areas of Intellectual Property Law. 
+        We help clients protect, manage, and enforce their intellectual assets across jurisdictions.
+      </p>
+    </div>
+
+    <!-- Services -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
+      {services.map((service) => {
+        const content = (
+          <>
+            <div class="flex items-start justify-between gap-4">
+              <h2 class="text-2xl font-semibold">{service.title}</h2>
+              <span class="text-amber-600 text-xl" aria-hidden="true">→</span>
+            </div>
+            <div class="service-rule" aria-hidden="true"></div>
+            <ul class="space-y-4 text-zinc-600 dark:text-zinc-400">
+              {service.items.map((item) => (
+                <li class="service-item">
+                  <span class="service-bullet" aria-hidden="true"></span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+            <p class="mt-7 text-sm font-medium text-amber-600">Explore services</p>
+          </>
+        );
+
+        return (
+          <a href={service.href} class="service-card service-link">
+            {content}
+          </a>
+        );
+      })}
+    </div>
+
+    <!-- IP Desk Contact -->
+    <section class="ip-contact-card">
+      <div>
+        <p class="ip-contact-label">Intellectual Property Practice Contact</p>
+        <h2 class="font-serif text-4xl mt-4">IP Desk</h2>
+        <p class="mt-5 max-w-xl text-lg leading-relaxed text-zinc-700 dark:text-zinc-300">
+          Connect with our dedicated team for intellectual property, media, entertainment, and technology matters.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8 mt-10 pt-9 border-t border-amber-200 dark:border-amber-900/70">
+        <address class="not-italic leading-relaxed text-zinc-600 dark:text-zinc-400">
+          <span class="ip-contact-label block mb-4">Office</span>
+          C-478, FF, Defence Colony<br>
+          New Delhi 110 024, India
+        </address>
+
+        <div>
+          <p class="ip-contact-label mb-4">Contact</p>
+          <a class="ip-contact-link text-xl" href="tel:+919810928556">+91 98109 28556</a>
+          <div class="mt-4 space-y-2">
+            <a class="ip-contact-link" href="mailto:mail@chiramelco.com">mail@chiramelco.com</a>
+            <a class="ip-contact-link" href="mailto:christine@chiramelco.com">christine@chiramelco.com</a>
+          </div>
+        </div>
+
+        <div class="md:text-center">
+          <p class="ip-contact-label mb-4">WhatsApp</p>
+          <a href="https://wa.me/919810928556" target="_blank" rel="noopener noreferrer" class="ip-whatsapp">
+            <img src={sitePath('/images/whatsapp-christine.svg')} alt="WhatsApp QR code for the IP Desk">
+            <span>Scan to connect</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</MainLayout>
+
+<style>
+  .service-card {
+    display: block;
+    padding: 2rem;
+    border: 1px solid rgb(228 228 231);
+    border-radius: 1.5rem;
+    background: white;
+    transition: border-color 180ms ease, transform 180ms ease;
+  }
+
+  .service-link {
+    color: inherit;
+  }
+
+  .service-card:hover {
+    border-color: rgb(217 119 6);
+    transform: translateY(-2px);
+  }
+
+  .service-rule {
+    width: 2.5rem;
+    height: 1px;
+    margin: 1.25rem 0 1.5rem;
+    background: rgb(217 119 6);
+  }
+
+  .service-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+    line-height: 1.5;
+  }
+
+  .service-bullet {
+    width: 0.4rem;
+    height: 0.4rem;
+    flex-shrink: 0;
+    margin-top: 0.55rem;
+    border-radius: 9999px;
+    background: rgb(217 119 6);
+  }
+
+  :global(.dark) .service-card {
+    border-color: rgb(39 39 42);
+    background: rgb(9 9 11);
+  }
+
+  :global(.dark) .service-card:hover {
+    border-color: rgb(217 119 6);
+  }
+
+  .ip-contact-card {
+    max-width: 62rem;
+    margin: 0 auto;
+    padding: clamp(2rem, 5vw, 3.5rem);
+    border: 1px solid rgb(253 230 138);
+    border-radius: 1.75rem;
+    background: rgb(255 251 235);
+  }
+
+  .ip-contact-label {
+    color: rgb(217 119 6);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+
+  .ip-contact-link {
+    display: block;
+    color: rgb(180 83 9);
+    font-weight: 500;
+    transition: color 180ms ease;
+  }
+
+  .ip-contact-link:hover {
+    color: rgb(146 64 14);
+  }
+
+  .ip-whatsapp {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.65rem;
+    color: rgb(180 83 9);
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+
+  .ip-whatsapp img {
+    width: 5.5rem;
+    height: 5.5rem;
+    padding: 0.25rem;
+    border: 1px solid rgb(253 230 138);
+    border-radius: 0.5rem;
+    background: white;
+  }
+
+  :global(.dark) .ip-contact-card {
+    border-color: rgb(120 53 15);
+    background: rgb(69 26 3 / 28%);
+  }
+
+  :global(.dark) .ip-contact-link {
+    color: rgb(251 191 36);
+  }
+
+  :global(.dark) .ip-whatsapp {
+    color: rgb(251 191 36);
+  }
+</style>

@@ -1,0 +1,38 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import { sitePath } from '../utils/sitePath';
+---
+
+<MainLayout title="About Us - Chiramel & Co">
+  
+  <!-- Thinner Hero Section -->
+  <section class="relative h-[35vh] md:h-[32vh] flex items-center overflow-hidden bg-black">
+    <img 
+      src={sitePath('/images/hero1.png')}
+      alt="Chiramel & Co" 
+      class="absolute inset-0 w-full h-full object-cover"
+    >
+    <div class="absolute inset-0 bg-black/65"></div>
+    
+    <div class="relative z-10 max-w-7xl mx-auto px-6 text-center">
+      <h1 class="text-5xl md:text-6xl font-serif text-white">About Us</h1>
+    </div>
+  </section>
+
+  <!-- Content -->
+  <div class="max-w-4xl mx-auto px-6 py-20">
+    <div class="prose prose-lg dark:prose-invert max-w-none leading-relaxed">
+	      <p class="text-lg">
+        Established in 1985, <strong>Chiramel & Co., Solicitors and Advocates</strong>, is a full service law firm providing legal services to corporates, government bodies and individuals across India in the fields of banking, insurance, corporate law, infrastructure, taxation, intellectual property law, media laws, consumer protection, real estate and service laws.
+      </p>
+      
+	      <p class="mt-8 text-lg">
+        The firm handles civil and criminal matters across various legal fora including the Supreme Court of India, State High Courts, Consumer Fora, DRT, DRAT, NCLT, NCLAT, Trademark, Copyright and Patent Office, District Courts, Arbitration Tribunals, etc.
+      </p>
+      
+      <p class="mt-8 text-lg">
+        We at Chiramel & Co. strive for excellence in all our endeavors, delivering quality services and ensuring consistent client satisfaction.
+      </p>
+    </div>
+  </div>
+</MainLayout>

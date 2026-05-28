@@ -1,0 +1,39 @@
+---
+import IPDetailPage from '../components/IPDetailPage.astro';
+
+const details = [
+  {
+    title: 'Trademark Registration',
+    subtitle: 'Domestic and International',
+    description: 'Selection, clearance and registration advice is available for marks in India and internationally. Filing strategy and prosecution can be coordinated for brands entering multiple markets.',
+  },
+  {
+    title: 'Opposition & Rectification',
+    subtitle: 'IPO and High Court Actions',
+    description: 'Opposition, cancellation and rectification proceedings may be pursued before the Intellectual Property Office and the High Courts. Representation is directed at protecting valuable brand rights and resolving register conflicts efficiently.',
+  },
+  {
+    title: 'Brand Protection Strategy',
+    subtitle: 'Global Trademark Portfolio Management',
+    description: 'A carefully managed trademark portfolio supports commercial priorities and long-term brand value. Services include international filing plans, renewal oversight and practical brand-use guidance across jurisdictions.',
+  },
+  {
+    title: 'Anti-Counterfeiting',
+    subtitle: 'Customs Recordals',
+    description: 'Anti-counterfeiting programmes and customs recordals can help intercept infringing goods. Support includes enforcement planning, evidence coordination and action against counterfeit supply channels.',
+  },
+  {
+    title: 'Investigations & Enforcement',
+    subtitle: 'Protecting Trademark Rights',
+    description: 'Investigations address suspected infringement, passing off and misuse of brands. Where action is required, notices, civil remedies and enforcement measures can be pursued to safeguard trademark interests.',
+  },
+];
+---
+
+<IPDetailPage
+  title="Trademarks"
+  tagline="Protection • Strategy • Enforcement"
+  intro="Our trademark practice supports the creation, protection, management and enforcement of brands across jurisdictions."
+  contactIntro="Connect with our dedicated team for trademark registration, portfolio strategy and enforcement matters."
+  details={details}
+/>

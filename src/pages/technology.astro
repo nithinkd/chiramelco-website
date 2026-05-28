@@ -1,0 +1,34 @@
+---
+import IPDetailPage from '../components/IPDetailPage.astro';
+
+const details = [
+  {
+    title: 'Data Protection',
+    subtitle: 'Information Governance',
+    description: 'Collection, processing and safeguarding of data bring legal obligations for organisations. Appropriate governance measures and contract terms support data-driven operations.',
+  },
+  {
+    title: 'Privacy',
+    subtitle: 'Responsible Data Use',
+    description: 'Privacy considerations arise throughout products, services and commercial relationships. Reviews cover disclosures, consent frameworks and obligations toward individuals.',
+  },
+  {
+    title: 'AI Governance',
+    subtitle: 'Emerging Technology Risk',
+    description: 'Deployment of artificial intelligence requires attention to legal and governance considerations. Guidance addresses responsible use, contracting, intellectual property and accountability concerns.',
+  },
+  {
+    title: 'Platform Compliance',
+    subtitle: 'Digital Services',
+    description: 'Platforms and technology businesses face compliance considerations affecting online operations and content. Advice may include terms, policies, intermediary issues and risk-management structures.',
+  },
+];
+---
+
+<IPDetailPage
+  title="Technology"
+  tagline="Data • Privacy • Governance"
+  intro="Our technology practice assists businesses navigating data, digital platforms and responsible adoption of emerging tools."
+  contactIntro="Connect with our dedicated team for technology, privacy, data protection and AI governance matters."
+  details={details}
+/>

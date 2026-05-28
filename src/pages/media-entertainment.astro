@@ -1,0 +1,34 @@
+---
+import IPDetailPage from '../components/IPDetailPage.astro';
+
+const details = [
+  {
+    title: 'Music Clearance',
+    subtitle: 'Rights and Permissions',
+    description: 'Music clearances and permissions are essential for production, performance and distribution. Advice includes navigating underlying composition and recording rights in commercial content.',
+  },
+  {
+    title: 'Talent & Production Deals',
+    subtitle: 'Agreements and Engagements',
+    description: 'Arrangements with talent, producers and production partners require clear rights and commercial terms. Agreements focus on rights grants, deliverables, compensation and protection of commercial interests.',
+  },
+  {
+    title: 'Advertising, Broadcasting & Distribution',
+    subtitle: 'Content Exploitation',
+    description: 'Advertising, broadcast use and content distribution raise rights and clearance issues across traditional and digital platforms. Appropriate terms help align permissions with commercial exploitation.',
+  },
+  {
+    title: 'Content Acquisition & Dispute Resolution',
+    subtitle: 'Acquisition and Conflict Management',
+    description: 'Acquisition of content rights requires agreements that make lawful exploitation possible. Disputes may be addressed through negotiation, enforcement and focused resolution strategy.',
+  },
+];
+---
+
+<IPDetailPage
+  title="Media & Entertainment"
+  tagline="Content • Talent • Distribution"
+  intro="Our media and entertainment practice helps clients create, acquire, exploit and protect content across a changing commercial landscape."
+  contactIntro="Connect with our dedicated team for media, entertainment and content-rights matters."
+  details={details}
+/>

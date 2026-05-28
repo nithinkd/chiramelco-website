@@ -2,6 +2,7 @@
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import '../styles/globals.css';
+import { sitePath } from '../utils/sitePath';
 
 const { title = 'Chiramel & Co | Advocates & Solicitors' } = Astro.props;
 ---
@@ -12,6 +13,10 @@ const { title = 'Chiramel & Co | Advocates & Solicitors' } = Astro.props;
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{title}</title>
   <meta name="description" content="Chiramel & Co - Leading law firm with expertise in Supreme Court, High Courts and Tribunals across India." />
+  <link rel="icon" href={sitePath('/favicon.ico')} sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href={sitePath('/favicon-32x32.png')} />
+  <link rel="icon" type="image/png" sizes="16x16" href={sitePath('/favicon-16x16.png')} />
+  <link rel="apple-touch-icon" sizes="180x180" href={sitePath('/apple-touch-icon.png')} />
 </head>
 <body class="bg-zinc-50 dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100">
   <Header />

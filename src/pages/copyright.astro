@@ -1,0 +1,34 @@
+---
+import IPDetailPage from '../components/IPDetailPage.astro';
+
+const details = [
+  {
+    title: 'Copyright Prosecution',
+    subtitle: 'Protecting Creative Works',
+    description: 'Creators, businesses and rights holders can secure and advance copyright claims through careful documentation of ownership. Strong records support enforceable rights in valuable works.',
+  },
+  {
+    title: 'Copyright Registration',
+    subtitle: 'Filing and Record Protection',
+    description: 'Copyright applications and related filings cover literary, artistic, musical, audiovisual and digital works. Registration creates a clear record of ownership and supports later commercial or enforcement needs.',
+  },
+  {
+    title: 'Licensing & Assignment',
+    subtitle: 'Commercial Use of Rights',
+    description: 'Licences and assignment arrangements govern the use or transfer of copyrighted material. Agreements are structured around permitted use, remuneration, ownership and risk allocation.',
+  },
+  {
+    title: 'Infringement Suits',
+    subtitle: 'Enforcement and Remedies',
+    description: 'Unauthorised copying, exploitation and distribution of protected works may require enforcement action. Assistance covers dispute strategy, interim protection and court proceedings where necessary.',
+  },
+];
+---
+
+<IPDetailPage
+  title="Copyright"
+  tagline="Ownership • Licensing • Enforcement"
+  intro="Our copyright practice supports creators and businesses in securing, commercialising and enforcing rights in original works."
+  contactIntro="Connect with our dedicated team for copyright registration, transactions and infringement matters."
+  details={details}
+/>

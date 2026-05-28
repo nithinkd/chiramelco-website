@@ -1,23 +1,91 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
+import { sitePath } from '../utils/sitePath';
+
+const featuredAreas = [
+  {
+    title: 'Arbitration & Alternate Disputes Resolution',
+    description: 'Resolution strategies for complex domestic and commercial disputes.',
+    href: sitePath('/practice-areas'),
+    icon: 'arbitration',
+  },
+  {
+    title: 'Banking & Insurance Law',
+    description: 'Advisory and dispute support for financial and insurance matters.',
+    href: sitePath('/practice-areas'),
+    icon: 'banking',
+  },
+  {
+    title: 'Consumer Law',
+    description: 'Representation and counsel for consumer protection proceedings.',
+    href: sitePath('/practice-areas'),
+    icon: 'consumer',
+  },
+  {
+    title: 'Intellectual Property, Media & Entertainment Laws',
+    description: 'Protection, strategy and enforcement for brands and creative assets.',
+    href: sitePath('/intellectual-property'),
+    icon: 'ip',
+  },
+];
 ---
 
 <MainLayout title="Chiramel & Co | Advocates & Solicitors">
-  <!-- Hero -->
-  <section class="min-h-[90vh] flex items-center bg-gradient-to-br from-zinc-950 to-zinc-900 text-white relative overflow-hidden">
-    <div class="max-w-7xl mx-auto px-6 py-24 relative z-10">
-      <div class="max-w-3xl">
-        <p class="text-amber-500 font-medium tracking-widest">ESTABLISHED PRACTICE • SUPREME COURT OF INDIA</p>
-        <h1 class="text-7xl md:text-8xl font-serif font-semibold leading-none mt-6">
-          Justice.<br>Excellence.<br>Integrity.
-        </h1>
-        <p class="mt-8 text-xl text-zinc-300 max-w-lg">
-          Chiramel & Co is a full-service law firm with deep expertise across litigation, arbitration, and advisory matters before the Supreme Court, High Courts and Tribunals.
-        </p>
-        <div class="mt-12 flex gap-4">
-          <a href="/contact" class="bg-amber-600 hover:bg-amber-700 px-8 py-4 rounded-2xl font-medium text-lg transition">Get In Touch</a>
-          <a href="/practice-areas" class="border border-white/50 hover:bg-white/10 px-8 py-4 rounded-2xl font-medium text-lg transition">Our Practice Areas</a>
+  <!-- Disclaimer Modal -->
+  <div id="disclaimer-modal" class="fixed inset-0 bg-black/95 z-[100] flex items-center justify-center hidden p-4 sm:p-6">
+    <div class="w-full max-w-2xl max-h-[calc(100dvh-2rem)] mx-auto px-4 sm:px-8 py-4 sm:py-6 text-center flex flex-col">
+      
+      <!-- Logo -->
+      <img 
+        src={sitePath('/images/herologo.png')}
+        alt="Chiramel & Co" 
+        class="h-12 sm:h-16 md:h-24 w-auto mx-auto mb-4 sm:mb-8 drop-shadow-2xl shrink-0"
+      >
+
+      <h2 class="text-3xl sm:text-4xl font-serif text-amber-400 tracking-tight mb-4 sm:mb-8 shrink-0">Disclaimer</h2>
+      
+      <div class="text-white/90 text-sm sm:text-base leading-relaxed mb-5 sm:mb-8 text-left max-w-prose mx-auto overflow-y-auto pr-2">
+        <p class="mb-5">The Bar Council of India Rules do not permit us to solicit work and advertise. The user acknowledges the following by clicking on “accept” below :</p>
+        
+        <ul class="list-disc pl-6 space-y-3 text-[15px]">
+          <li>There has been no advertisement, personal communication, solicitation, invitation or inducement of any sort whatsoever from us or any of our members to solicit any work through this website;</li>
+          <li>The user on his/her own accord requests and accesses information about us for his/her own general information and use.</li>
+        </ul>
+        
+        <p class="mt-6">The materials on this website do not constitute advice and we are not liable for any consequence of any action taken by the user relying on material / information provided under this website.</p>
+      </div>
+
+      <button 
+        id="enter-button"
+        class="shrink-0 bg-amber-600 hover:bg-amber-700 text-white px-7 sm:px-10 py-3 sm:py-4 rounded-2xl text-sm sm:text-base font-medium transition">
+        I Accept &amp; Enter Website
+      </button>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="relative min-h-[90vh] flex items-center overflow-hidden bg-black">
+    <img 
+      src={sitePath('/images/hero1.png')}
+      alt="Chiramel & Co" 
+      class="absolute inset-0 w-full h-full object-cover scale-110 drifting-bg"
+    >
+    <div class="absolute inset-0 bg-black/40"></div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-6 py-24 w-full flex justify-center">
+      <div class="text-center">
+        <img src={sitePath('/images/herologo.png')} alt="Chiramel & Co" class="h-40 md:h-48 w-auto mx-auto drop-shadow-2xl mb-10">
+
+        <div class="mt-6 flex flex-wrap justify-center gap-8 text-lg">
+          <a href={sitePath('/contact')} class="text-white hover:text-amber-400 font-medium transition-colors underline-offset-4 hover:underline">
+            Contact Us →
+          </a>
+          <a href={sitePath('/practice-areas')} class="text-white hover:text-amber-400 font-medium transition-colors underline-offset-4 hover:underline">
+            Practice Areas →
+          </a>
         </div>
+
+        <img src={sitePath('/images/estd.png')} alt="Established" class="mt-36 md:mt-40 h-20 md:h-24 w-auto mx-auto drop-shadow-xl">
       </div>
     </div>
   </section>
@@ -25,21 +93,162 @@ import MainLayout from '../layouts/MainLayout.astro';
   <!-- Practice Areas Teaser -->
   <section class="py-24 bg-white dark:bg-zinc-950">
     <div class="max-w-7xl mx-auto px-6">
-      <h2 class="text-5xl font-serif text-center mb-16">Practice Areas</h2>
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="p-8 border border-zinc-200 dark:border-zinc-800 rounded-3xl hover:border-amber-600 transition group">
-          <h3 class="font-semibold text-2xl mb-3">Constitutional Law</h3>
-          <p class="text-zinc-600 dark:text-zinc-400">Landmark cases before the Supreme Court of India</p>
-        </div>
-        <div class="p-8 border border-zinc-200 dark:border-zinc-800 rounded-3xl hover:border-amber-600 transition group">
-          <h3 class="font-semibold text-2xl mb-3">Corporate & Commercial</h3>
-          <p class="text-zinc-600 dark:text-zinc-400">Mergers, disputes, regulatory matters</p>
-        </div>
-        <div class="p-8 border border-zinc-200 dark:border-zinc-800 rounded-3xl hover:border-amber-600 transition group">
-          <h3 class="font-semibold text-2xl mb-3">Arbitration & ADR</h3>
-          <p class="text-zinc-600 dark:text-zinc-400">Domestic and International arbitration</p>
-        </div>
+      <div class="max-w-2xl mx-auto text-center mb-14">
+        <p class="text-sm font-semibold uppercase tracking-[0.25em] text-amber-600 mb-4">Legal Expertise</p>
+        <h2 class="text-4xl md:text-5xl font-serif">Our Practice Areas</h2>
+        <p class="mt-5 text-lg text-zinc-600 dark:text-zinc-400">
+          Strategic counsel and representation across a broad range of legal matters.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+        {featuredAreas.map((area) => (
+          <a href={area.href} class="featured-practice">
+            <div class="practice-icon" aria-hidden="true">
+              {area.icon === 'arbitration' && (
+                <svg viewBox="0 0 24 24">
+                  <path d="M12 3v18M7 6h10M5 9l-3 5h6L5 9Zm14 0-3 5h6l-3-5ZM8 21h8"/>
+                </svg>
+              )}
+              {area.icon === 'banking' && (
+                <svg viewBox="0 0 24 24">
+                  <path d="m3 9 9-5 9 5M5 10v8M9 10v8M15 10v8M19 10v8M3 19h18M2 22h20"/>
+                </svg>
+              )}
+              {area.icon === 'consumer' && (
+                <svg viewBox="0 0 24 24">
+                  <path d="M7 9V7a5 5 0 0 1 10 0v2M4 9h16l-1 11H5L4 9Zm5 4a3 3 0 0 0 6 0"/>
+                </svg>
+              )}
+              {area.icon === 'ip' && (
+                <svg viewBox="0 0 24 24">
+                  <path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.74c.8.56 1.27 1.42 1.39 2.26h5.22c.12-.84.59-1.7 1.39-2.26A7 7 0 0 0 12 2Z"/>
+                  <path d="M12 6v6M9 9h6"/>
+                </svg>
+              )}
+            </div>
+            <h3 class="mt-7 text-xl font-semibold leading-snug">{area.title}</h3>
+            <p class="mt-4 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">{area.description}</p>
+            <span class="practice-action">Explore <span aria-hidden="true">→</span></span>
+          </a>
+        ))}
+      </div>
+
+      <div class="text-center mt-14">
+        <a href={sitePath('/practice-areas')} class="inline-flex items-center gap-2 text-amber-600 hover:text-amber-700 font-medium text-lg transition">
+          See All Practice Areas <span class="text-xl">→</span>
+        </a>
       </div>
     </div>
   </section>
 </MainLayout>
+
+<script>
+  function enterWebsite() {
+    const modal = document.getElementById('disclaimer-modal');
+    if (modal) {
+      modal.style.opacity = '0';
+      setTimeout(() => {
+        modal.style.display = 'none';
+        sessionStorage.setItem('disclaimerAccepted', 'true');
+      }, 400);
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const modal = document.getElementById('disclaimer-modal');
+    const hasAccepted = sessionStorage.getItem('disclaimerAccepted');
+
+    if (hasAccepted === 'true') {
+      modal.style.display = 'none';
+    } else {
+      modal.style.display = 'flex';
+      
+      const button = document.getElementById('enter-button');
+      if (button) {
+        button.addEventListener('click', enterWebsite);
+      }
+    }
+  });
+</script>
+
+<style>
+  .drifting-bg {
+    animation: drift 40s linear infinite;
+  }
+
+  @keyframes drift {
+    from { transform: translateX(0) scale(1.1); }
+    to { transform: translateX(-12%) scale(1.1); }
+  }
+
+  .featured-practice {
+    display: flex;
+    flex-direction: column;
+    min-height: 22rem;
+    padding: 2rem 1.7rem 1.7rem;
+    border: 1px solid rgb(228 228 231);
+    border-radius: 1.5rem;
+    color: inherit;
+    background: linear-gradient(145deg, white, rgb(250 250 250));
+    transition: border-color 180ms ease, transform 180ms ease, box-shadow 180ms ease;
+  }
+
+  .featured-practice:hover {
+    border-color: rgb(217 119 6);
+    transform: translateY(-4px);
+    box-shadow: 0 18px 40px rgb(24 24 27 / 7%);
+  }
+
+  .practice-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    border: 1px solid rgb(253 230 138);
+    border-radius: 9999px;
+    color: rgb(217 119 6);
+    background: rgb(255 251 235);
+  }
+
+  .practice-icon svg {
+    width: 1.5rem;
+    height: 1.5rem;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .practice-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    margin-top: auto;
+    padding-top: 1.6rem;
+    color: rgb(180 83 9);
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+
+  :global(.dark) .featured-practice {
+    border-color: rgb(39 39 42);
+    background: linear-gradient(145deg, rgb(9 9 11), rgb(16 16 18));
+  }
+
+  :global(.dark) .featured-practice:hover {
+    border-color: rgb(217 119 6);
+    box-shadow: 0 18px 40px rgb(0 0 0 / 25%);
+  }
+
+  :global(.dark) .practice-icon {
+    border-color: rgb(120 53 15);
+    background: rgb(69 26 3 / 30%);
+  }
+
+  :global(.dark) .practice-action {
+    color: rgb(251 191 36);
+  }
+</style>

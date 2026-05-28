@@ -1,0 +1,39 @@
+---
+import IPDetailPage from '../components/IPDetailPage.astro';
+
+const details = [
+  {
+    title: 'Patent Filing & Prosecution',
+    subtitle: 'Protection of Inventions',
+    description: 'Patent filing and prosecution strategy helps innovators and businesses secure meaningful protection. Applications can be developed in line with technical and commercial goals.',
+  },
+  {
+    title: 'Patent Searches & Opinions',
+    subtitle: 'Assessment and Strategy',
+    description: 'Patent searches and legal opinions inform protectability, freedom to operate and business decisions. Early analysis clarifies potential opportunities and risk.',
+  },
+  {
+    title: 'Infringement Litigation',
+    subtitle: 'Enforcement and Defence',
+    description: 'Disputes involving alleged patent or design infringement require strategies grounded in the protected subject matter and commercial stakes. Litigation and resolution options can be tailored accordingly.',
+  },
+  {
+    title: 'PCT International Applications',
+    subtitle: 'International Filing Strategy',
+    description: 'International patent filing pathways include PCT applications and related strategy. This framework supports planning protection in key jurisdictions while managing filing priorities and timing.',
+  },
+  {
+    title: 'Industrial Design Registration',
+    subtitle: 'Protecting Product Appearance',
+    description: 'Industrial design registration protects distinctive aspects of product appearance. Registered design rights can support market exclusivity and action against imitation.',
+  },
+];
+---
+
+<IPDetailPage
+  title="Patents & Designs"
+  tagline="Innovation • Registration • Enforcement"
+  intro="Our patents and designs practice assists clients in identifying, protecting and enforcing innovation and product design rights."
+  contactIntro="Connect with our dedicated team for patent filing, design registration and infringement matters."
+  details={details}
+/>

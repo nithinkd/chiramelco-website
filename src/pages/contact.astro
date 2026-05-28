@@ -1,0 +1,122 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import { sitePath } from '../utils/sitePath';
+---
+
+<MainLayout title="Contact Us - Chiramel & Co">
+
+  <!-- Thin Hero Header -->
+  <section class="relative h-[35vh] md:h-[32vh] flex items-center overflow-hidden bg-black">
+    <img 
+      src={sitePath('/images/contactusheader.png')}
+      alt="Contact Us" 
+      class="absolute inset-0 w-full h-full object-cover"
+    >
+    <div class="absolute inset-0 bg-black/65"></div>
+    
+    <div class="relative z-10 max-w-7xl mx-auto px-6 text-center">
+      <h1 class="text-5xl md:text-6xl font-serif text-white">Contact Us</h1>
+    </div>
+  </section>
+
+  <!-- Contact Content -->
+  <div class="max-w-6xl mx-auto px-6 py-20">
+    <div class="grid lg:grid-cols-[1fr_1fr] gap-8">
+      <section class="contact-card lg:row-span-2">
+        <p class="contact-label">Head Office</p>
+        <h2 class="text-3xl font-semibold mt-4">Head Office</h2>
+        <address class="mt-7 not-italic text-lg leading-relaxed text-zinc-600 dark:text-zinc-400">
+          Thakkar Sadan, Link Road<br>
+          New Delhi 110 055, India
+        </address>
+
+        <div class="mt-10 pt-8 border-t border-zinc-200 dark:border-zinc-800 grid sm:grid-cols-2 gap-8">
+          <div>
+            <p class="contact-label">Telephone</p>
+            <div class="mt-4 space-y-2 text-lg">
+              <a class="contact-link" href="tel:+919810138185">+91 98101 38185</a>
+              <a class="contact-link" href="tel:+919313973203">+91 93139 73203</a>
+            </div>
+          </div>
+          <div>
+            <p class="contact-label">Email</p>
+            <div class="mt-4 space-y-2">
+              <a class="contact-link" href="mailto:jos@chiramelco.com">jos@chiramelco.com</a>
+              <a class="contact-link" href="mailto:chiramelco@hotmail.com">chiramelco@hotmail.com</a>
+              <a class="contact-link" href="mailto:info@chiramelco.org">info@chiramelco.org</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact-card">
+        <p class="contact-label">Court Chamber</p>
+        <h2 class="text-2xl font-semibold mt-4">Chamber</h2>
+        <address class="mt-6 not-italic leading-relaxed text-zinc-600 dark:text-zinc-400">
+          Block III / Chamber No. 611<br>
+          Delhi High Court, New Delhi 110 003
+        </address>
+      </section>
+
+      <section class="contact-card border-amber-200 dark:border-amber-900/70 bg-amber-50/70 dark:bg-amber-950/20">
+        <p class="contact-label">Intellectual Property Practice Contact</p>
+        <h2 class="text-3xl font-semibold mt-4">IP Desk</h2>
+        <div class="mt-7">
+          <address class="not-italic leading-relaxed text-zinc-600 dark:text-zinc-400">
+            <span class="block font-medium text-zinc-900 dark:text-zinc-100 mb-2">Office</span>
+            C-478, FF, Defence Colony<br>
+            New Delhi 110 024, India
+          </address>
+        </div>
+
+        <div class="mt-8 pt-7 border-t border-amber-200 dark:border-amber-900/70">
+          <a class="contact-link text-lg" href="tel:+919810928556">+91 98109 28556</a>
+          <div class="mt-4 flex flex-wrap gap-x-5 gap-y-2">
+            <a class="contact-link" href="mailto:mail@chiramelco.com">mail@chiramelco.com</a>
+            <a class="contact-link" href="mailto:christine@chiramelco.com">christine@chiramelco.com</a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</MainLayout>
+
+<style>
+  .contact-card {
+    padding: 2rem;
+    border: 1px solid rgb(228 228 231);
+    border-radius: 1.5rem;
+    background: white;
+  }
+
+  .contact-label {
+    color: rgb(217 119 6);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+
+  .contact-link {
+    display: block;
+    color: rgb(82 82 91);
+    transition: color 180ms ease;
+  }
+
+  .contact-link:hover {
+    color: rgb(217 119 6);
+  }
+
+  :global(.dark) .contact-card {
+    border-color: rgb(39 39 42);
+    background: rgb(9 9 11);
+  }
+
+  :global(.dark) .contact-link {
+    color: rgb(212 212 216);
+  }
+
+  :global(.dark) .contact-link:hover {
+    color: rgb(251 191 36);
+  }
+</style>

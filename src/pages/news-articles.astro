@@ -1,0 +1,117 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import { getCollection } from 'astro:content';
+import { sitePath } from '../utils/sitePath';
+
+const articles = (await getCollection('articles')).sort((a, b) => a.data.order - b.data.order);
+---
+
+<MainLayout title="News & Articles - Chiramel & Co">
+  <section class="relative h-[35vh] md:h-[32vh] flex items-center overflow-hidden bg-black">
+    <img
+      src={sitePath('/images/practiceheader.png')}
+      alt=""
+      class="absolute inset-0 w-full h-full object-cover"
+    >
+    <div class="absolute inset-0 bg-black/65"></div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-6 text-center">
+      <h1 class="text-5xl md:text-6xl font-serif text-white">News &amp; Articles</h1>
+    </div>
+  </section>
+
+  <section class="max-w-6xl mx-auto px-6 py-20">
+    <div class="max-w-3xl mx-auto text-center">
+      <p class="text-sm font-semibold uppercase tracking-[0.22em] text-amber-600 mb-5">Insights</p>
+      <h2 class="text-3xl md:text-4xl font-serif">Perspectives on Law and Practice</h2>
+      <p class="mt-6 text-lg leading-relaxed text-zinc-600 dark:text-zinc-400">
+        Legal analysis and commentary from Chiramel &amp; Co. on developments affecting clients and practice.
+      </p>
+    </div>
+
+    <div class="mt-16 grid md:grid-cols-2 gap-6">
+      {articles.map(({ id, data }) => (
+        <article class="article-card">
+          <div class="flex items-center justify-between gap-4">
+            <span class="article-category">{data.category}</span>
+            <span class="text-sm text-zinc-500 dark:text-zinc-400">By {data.author}</span>
+          </div>
+          <h3 class="mt-6 text-2xl font-serif leading-snug">{data.title}</h3>
+          <p class="mt-5 leading-relaxed text-zinc-600 dark:text-zinc-400">{data.excerpt}</p>
+          <a
+            href={sitePath(`/news-articles/${id}`)}
+            class="article-link"
+          >
+            Read article <span aria-hidden="true">→</span>
+          </a>
+        </article>
+      ))}
+    </div>
+  </section>
+</MainLayout>
+
+<style>
+  .article-card {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    min-height: 25rem;
+    border: 1px solid rgb(228 228 231);
+    border-radius: 1.5rem;
+    background: white;
+    transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+  }
+
+  .article-card:hover {
+    border-color: rgb(217 119 6);
+    transform: translateY(-3px);
+    box-shadow: 0 18px 36px rgb(24 24 27 / 6%);
+  }
+
+  .article-category {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 9999px;
+    padding: 0.45rem 0.85rem;
+    background: rgb(255 251 235);
+    color: rgb(180 83 9);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .article-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    margin-top: auto;
+    padding-top: 1.8rem;
+    color: rgb(180 83 9);
+    font-weight: 500;
+    transition: color 180ms ease;
+  }
+
+  .article-link:hover {
+    color: rgb(217 119 6);
+  }
+
+  :global(.dark) .article-card {
+    border-color: rgb(39 39 42);
+    background: rgb(24 24 27 / 55%);
+  }
+
+  :global(.dark) .article-card:hover {
+    border-color: rgb(217 119 6);
+    box-shadow: 0 18px 36px rgb(0 0 0 / 24%);
+  }
+
+  :global(.dark) .article-category {
+    background: rgb(69 26 3 / 30%);
+    color: rgb(251 191 36);
+  }
+
+  :global(.dark) .article-link {
+    color: rgb(251 191 36);
+  }
+</style>
